@@ -1,0 +1,29 @@
+var expect = require("chai").expect;
+var Time = require("../lib/time");
+
+//assert.deepEqual(time1, new Time("13:42"));
+describe("Time", function () {
+    describe("#add()", function () {
+        it("should add hours and minutes", function () {
+            var time1 = new Time("12:22");
+            var time2 = new Time("1:20");
+            time1.add(time2);
+            expect(time1).to.have.a.property("hours", 13);
+            expect(time1).to.have.a.property("minutes", 42);
+        });
+        it("should accept zero hours", function () {
+            var time1 = new Time("00:22");
+            var time2 = new Time("1");
+            time1.add(time2);
+            expect(time1).to.have.a.property("hours", 1);
+            expect(time1).to.have.a.property("minutes", 22);
+        });
+        it("should accept one zero in minutes ", function () {
+            var time1 = new Time("20:22");
+            var time2 = new Time("1:0");
+            time1.add(time2);
+            expect(time1).to.have.a.property("hours", 21);
+            expect(time1).to.have.a.property("minutes", 22);
+        });
+    });
+});
