@@ -1,11 +1,14 @@
 {
-    "name": "nodetestseed",
-    "version": "1.0.0",
-    "description": "A seed with test support for node.",
-    "main": "Time.js",
-    "scripts": {
-        "test": "npm"
-    },
-    "author": "",
-    "license": "ISC"
+  "name": "nodetestseed",
+  "version": "1.0.0",
+  "description": "A seed with test support for node.",
+  "main": "Time.js",
+  "scripts": {
+    "test": "npm"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^3.5.0"
+  }
 }
